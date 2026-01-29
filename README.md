@@ -1,16 +1,20 @@
-## Hi there 👋
+# Hi there, I'm Viktor 👋
 
-<!--
-**knespii/knespii** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### 🎓 IT Student @ Smíchovská střední průmyslová škola a gymnázium (SSPŠ)
 
-Here are some ideas to get you started:
+I'm a passionate tech student from Prague, currently exploring the world of IoT and Web Dev.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+
+## 🚀 About Me
+- 🌱 I’m currently learning: **C#, HTML/CSS, Python, Cloud computing and virtualization**
+
+## 🛠 Tech Stack
+- **Languages:** C#, HTML/css
+- **Tools:** Git, VS Code, Linux
+- **Interested in:** IoT, Cloud computing
+- 
+---
+
+### 📫 Connect with me:
+[LinkedIn]((https://www.linkedin.com/in/viktor-knespl-ab2b33384/))
