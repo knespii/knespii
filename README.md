@@ -13,8 +13,8 @@ I'm a passionate tech student from Prague, currently exploring the world of IoT 
 - **Languages:** C#, HTML/css
 - **Tools:** Git, VS Code, Linux
 - **Interested in:** IoT, Cloud computing
-- 
+
 ---
 
 ### 📫 Connect with me:
-[LinkedIn]((https://www.linkedin.com/in/viktor-knespl-ab2b33384/))
+[LinkedIn](https://www.linkedin.com/in/viktor-knespl-ab2b33384/)
