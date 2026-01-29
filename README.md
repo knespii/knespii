@@ -2,7 +2,7 @@
 
 ### 🎓 IT Student @ Smíchovská střední průmyslová škola a gymnázium (SSPŠ)
 
-I'm a passionate tech student from Prague, currently exploring the world of IoT and Web Dev.
+I'm a passionate tech student from Prague, currently exploring the world of IoT and Cloud computing/virtualization.
 
 ---
 
