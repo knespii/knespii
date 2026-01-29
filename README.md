@@ -10,7 +10,7 @@ I'm a passionate tech student from Prague, currently exploring the world of IoT 
 - 🌱 I’m currently learning: **C#, HTML/CSS, Python, Cloud computing and virtualization**
 
 ## 🛠 Tech Stack
-- **Languages:** C#, HTML/css
+- **Languages:** C#, HTML/CSS
 - **Tools:** Git, VS Code, Linux
 - **Interested in:** IoT, Cloud computing
 
