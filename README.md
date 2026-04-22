@@ -11,7 +11,6 @@ I'm a passionate tech student from Prague, currently exploring the world of IoT 
 
 ## 🛠 Tech Stack
 - **Languages:** C#, HTML/CSS
-- **Tools:** Git, VS Code, Linux
 - **Interested in:** IoT, 3D modeling/printing, Cloud computing and virtualization
 
 ---
