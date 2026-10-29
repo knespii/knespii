@@ -30,6 +30,7 @@ THEMES = {
 INFO = [
     ("header", "viktor@knespl"),
     ("row", ["Uptime"], "{uptime}"),
+    ("row", ["Commits"], "{commits}"),
     ("row", ["Host"], "SSPŠ Praha"),
     ("row", ["Kernel"], "IT Student"),
     ("row", ["Location"], "Prague, Czech Republic"),
@@ -40,19 +41,18 @@ INFO = [
     ("blank",),
     ("row", ["Focus", "3D"], "3D Modeling in Fusion 360"),
     ("row", ["Focus", "Electronics"], "PCB Design in KiCad"),
-    ("row", ["Currently", "Learning"], "KiCad, PCB Design"),
-    ("blank",),
     ("row", ["Interests", "Tech"], "Linux, IoT, Raspberry Pi, E-ink"),
     ("row", ["Interests", "Software"], "GNOME extensions, AI tools"),
     ("row", ["Interests", "Making"], "3D Printing, Handwired Keyboards"),
     ("empty",),
+    ("header", "- Projects"),
+    ("row", ["Atelier"], "GNOME desktop styling extension"),
+    ("row", ["Dictly"], "Push-to-talk Whisper dictation"),
+    ("row", ["FreeCAD-MCP"], "Claude ↔ FreeCAD modeling"),
+    ("row", ["E-ink reader"], "Raspberry Pi EPUB reader"),
+    ("empty",),
     ("header", "- Contact"),
     ("row", ["LinkedIn"], "viktor-knespl"),
-    ("row", ["GitHub"], "knespii"),
-    ("empty",),
-    ("header", "- GitHub Stats"),
-    ("stats1",),
-    ("stats2",),
 ]
 
 
@@ -85,13 +85,8 @@ def graphql(token, query):
 
 
 def fetch_stats(token):
-    data = graphql(token, f"""{{ user(login: "{USER}") {{
-        followers {{ totalCount }}
-        repositoriesContributedTo(contributionTypes: [COMMIT, PULL_REQUEST, REPOSITORY]) {{ totalCount }}
-        repositories(ownerAffiliations: OWNER, privacy: PUBLIC, first: 100) {{
-            totalCount nodes {{ stargazerCount }} }}
-        contributionsCollection {{ contributionYears }} }} }}""")["user"]
-    years = data["contributionsCollection"]["contributionYears"]
+    years = graphql(token, f'{{ user(login: "{USER}") {{ contributionsCollection {{ contributionYears }} }} }}')
+    years = years["user"]["contributionsCollection"]["contributionYears"]
     year_queries = " ".join(
         f'y{y}: contributionsCollection(from: "{y}-01-01T00:00:00Z", to: "{y}-12-31T23:59:59Z")'
         " { totalCommitContributions restrictedContributionsCount }"
@@ -99,13 +94,7 @@ def fetch_stats(token):
     )
     per_year = graphql(token, f'{{ user(login: "{USER}") {{ {year_queries} }} }}')["user"]
     commits = sum(v["totalCommitContributions"] + v["restrictedContributionsCount"] for v in per_year.values())
-    return {
-        "repos": data["repositories"]["totalCount"],
-        "contributed": data["repositoriesContributedTo"]["totalCount"],
-        "stars": sum(n["stargazerCount"] for n in data["repositories"]["nodes"]),
-        "commits": commits,
-        "followers": data["followers"]["totalCount"],
-    }
+    return {"commits": commits}
 
 
 def dots(n):
@@ -120,20 +109,6 @@ def row(keys, value):
     return f'<tspan class="cc">. </tspan>{keys_svg}:{dots(fill)}<tspan class="value">{escape(value)}</tspan>'
 
 
-def pair(k1, v1, k2, v2, contributed=None):
-    v1, v2 = f"{v1:,}", f"{v2:,}"
-    extra_svg, extra_len = "", 0
-    if contributed is not None:
-        extra_svg = f' {{<tspan class="key">Contributed</tspan>: <tspan class="value">{contributed}</tspan>}}'
-        extra_len = len(f" {{Contributed: {contributed}}}")
-    left_width = 31
-    fill1 = left_width - 2 - len(k1) - 1 - 2 - len(v1) - extra_len
-    fill2 = WIDTH - left_width - 3 - len(k2) - 1 - 2 - len(v2)
-    return (f'<tspan class="cc">. </tspan><tspan class="key">{k1}</tspan>:{dots(fill1)}'
-            f'<tspan class="value">{v1}</tspan>{extra_svg} | <tspan class="key">{k2}</tspan>:{dots(fill2)}'
-            f'<tspan class="value">{v2}</tspan>')
-
-
 def info_lines(stats, today):
     lines = []
     for item in INFO:
@@ -142,15 +117,11 @@ def info_lines(stats, today):
             title = item[1]
             lines.append(f'{escape(title)} -{"—" * (WIDTH - len(title) - 5)}-—-')
         elif kind == "row":
-            lines.append(row(item[1], item[2].format(uptime=uptime(today))))
+            lines.append(row(item[1], item[2].format(uptime=uptime(today), commits=f"{stats['commits']:,}")))
         elif kind == "blank":
             lines.append('<tspan class="cc">. </tspan>')
         elif kind == "empty":
             lines.append("")
-        elif kind == "stats1":
-            lines.append(pair("Repos", stats["repos"], "Stars", stats["stars"], stats["contributed"]))
-        elif kind == "stats2":
-            lines.append(pair("Commits", stats["commits"], "Followers", stats["followers"]))
     return lines
 
 

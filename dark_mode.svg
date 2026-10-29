@@ -90,26 +90,26 @@ text, tspan {white-space: pre;}
 <text x="430" y="30" fill="#c9d1d9">
 <tspan x="430" y="30">viktor@knespl -————————————————————————————————————-—-</tspan>
 <tspan x="430" y="50"><tspan class="cc">. </tspan><tspan class="key">Uptime</tspan>:<tspan class="cc"> ................. </tspan><tspan class="value">3 years, 2 months, 29 days</tspan></tspan>
-<tspan x="430" y="70"><tspan class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ................................... </tspan><tspan class="value">SSPŠ Praha</tspan></tspan>
-<tspan x="430" y="90"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ................................. </tspan><tspan class="value">IT Student</tspan></tspan>
-<tspan x="430" y="110"><tspan class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Prague, Czech Republic</tspan></tspan>
-<tspan x="430" y="130"><tspan class="cc">. </tspan></tspan>
-<tspan x="430" y="150"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">Python, C#, JS, TypeScript</tspan></tspan>
-<tspan x="430" y="170"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">HTML, CSS, Bash, Docker</tspan></tspan>
-<tspan x="430" y="190"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Czech, English</tspan></tspan>
-<tspan x="430" y="210"><tspan class="cc">. </tspan></tspan>
-<tspan x="430" y="230"><tspan class="cc">. </tspan><tspan class="key">Focus</tspan>.<tspan class="key">3D</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">3D Modeling in Fusion 360</tspan></tspan>
-<tspan x="430" y="250"><tspan class="cc">. </tspan><tspan class="key">Focus</tspan>.<tspan class="key">Electronics</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">PCB Design in KiCad</tspan></tspan>
-<tspan x="430" y="270"><tspan class="cc">. </tspan><tspan class="key">Currently</tspan>.<tspan class="key">Learning</tspan>:<tspan class="cc"> .............. </tspan><tspan class="value">KiCad, PCB Design</tspan></tspan>
-<tspan x="430" y="290"><tspan class="cc">. </tspan></tspan>
-<tspan x="430" y="310"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Tech</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">Linux, IoT, Raspberry Pi, E-ink</tspan></tspan>
-<tspan x="430" y="330"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">GNOME extensions, AI tools</tspan></tspan>
-<tspan x="430" y="350"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Making</tspan>:<tspan class="cc"> . </tspan><tspan class="value">3D Printing, Handwired Keyboards</tspan></tspan>
-<tspan x="430" y="390">- Contact -————————————————————————————————————————-—-</tspan>
-<tspan x="430" y="410"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">viktor-knespl</tspan></tspan>
-<tspan x="430" y="430"><tspan class="cc">. </tspan><tspan class="key">GitHub</tspan>:<tspan class="cc"> .................................... </tspan><tspan class="value">knespii</tspan></tspan>
-<tspan x="430" y="470">- GitHub Stats -———————————————————————————————————-—-</tspan>
-<tspan x="430" y="490"><tspan class="cc">. </tspan><tspan class="key">Repos</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">13</tspan> {<tspan class="key">Contributed</tspan>: <tspan class="value">1</tspan>} | <tspan class="key">Stars</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">3</tspan></tspan>
-<tspan x="430" y="510"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">977</tspan> | <tspan class="key">Followers</tspan>:<tspan class="cc"> ....... </tspan><tspan class="value">2</tspan></tspan>
+<tspan x="430" y="70"><tspan class="cc">. </tspan><tspan class="key">Commits</tspan>:<tspan class="cc"> ....................................... </tspan><tspan class="value">977</tspan></tspan>
+<tspan x="430" y="90"><tspan class="cc">. </tspan><tspan class="key">Host</tspan>:<tspan class="cc"> ................................... </tspan><tspan class="value">SSPŠ Praha</tspan></tspan>
+<tspan x="430" y="110"><tspan class="cc">. </tspan><tspan class="key">Kernel</tspan>:<tspan class="cc"> ................................. </tspan><tspan class="value">IT Student</tspan></tspan>
+<tspan x="430" y="130"><tspan class="cc">. </tspan><tspan class="key">Location</tspan>:<tspan class="cc"> ................... </tspan><tspan class="value">Prague, Czech Republic</tspan></tspan>
+<tspan x="430" y="150"><tspan class="cc">. </tspan></tspan>
+<tspan x="430" y="170"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Programming</tspan>:<tspan class="cc"> .. </tspan><tspan class="value">Python, C#, JS, TypeScript</tspan></tspan>
+<tspan x="430" y="190"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Computer</tspan>:<tspan class="cc"> ........ </tspan><tspan class="value">HTML, CSS, Bash, Docker</tspan></tspan>
+<tspan x="430" y="210"><tspan class="cc">. </tspan><tspan class="key">Languages</tspan>.<tspan class="key">Real</tspan>:<tspan class="cc"> ..................... </tspan><tspan class="value">Czech, English</tspan></tspan>
+<tspan x="430" y="230"><tspan class="cc">. </tspan></tspan>
+<tspan x="430" y="250"><tspan class="cc">. </tspan><tspan class="key">Focus</tspan>.<tspan class="key">3D</tspan>:<tspan class="cc"> ................ </tspan><tspan class="value">3D Modeling in Fusion 360</tspan></tspan>
+<tspan x="430" y="270"><tspan class="cc">. </tspan><tspan class="key">Focus</tspan>.<tspan class="key">Electronics</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">PCB Design in KiCad</tspan></tspan>
+<tspan x="430" y="290"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Tech</tspan>:<tspan class="cc"> .... </tspan><tspan class="value">Linux, IoT, Raspberry Pi, E-ink</tspan></tspan>
+<tspan x="430" y="310"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Software</tspan>:<tspan class="cc"> ..... </tspan><tspan class="value">GNOME extensions, AI tools</tspan></tspan>
+<tspan x="430" y="330"><tspan class="cc">. </tspan><tspan class="key">Interests</tspan>.<tspan class="key">Making</tspan>:<tspan class="cc"> . </tspan><tspan class="value">3D Printing, Handwired Keyboards</tspan></tspan>
+<tspan x="430" y="370">- Projects -———————————————————————————————————————-—-</tspan>
+<tspan x="430" y="390"><tspan class="cc">. </tspan><tspan class="key">Atelier</tspan>:<tspan class="cc"> ........... </tspan><tspan class="value">GNOME desktop styling extension</tspan></tspan>
+<tspan x="430" y="410"><tspan class="cc">. </tspan><tspan class="key">Dictly</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Push-to-talk Whisper dictation</tspan></tspan>
+<tspan x="430" y="430"><tspan class="cc">. </tspan><tspan class="key">FreeCAD-MCP</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Claude ↔ FreeCAD modeling</tspan></tspan>
+<tspan x="430" y="450"><tspan class="cc">. </tspan><tspan class="key">E-ink reader</tspan>:<tspan class="cc"> ............. </tspan><tspan class="value">Raspberry Pi EPUB reader</tspan></tspan>
+<tspan x="430" y="490">- Contact -————————————————————————————————————————-—-</tspan>
+<tspan x="430" y="510"><tspan class="cc">. </tspan><tspan class="key">LinkedIn</tspan>:<tspan class="cc"> ............................ </tspan><tspan class="value">viktor-knespl</tspan></tspan>
 </text>
 </svg>
