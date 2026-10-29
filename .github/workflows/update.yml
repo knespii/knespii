@@ -2,7 +2,7 @@ name: Update profile SVGs
 
 on:
   schedule:
-    - cron: "7 * * * *"
+    - cron: "0 4 * * *"
   workflow_dispatch:
   push:
     branches: [main]
