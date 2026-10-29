@@ -5,7 +5,8 @@ usage: python make_art.py photo.jpg mask.png [out.json]
 The photo should be cropped to the person; a 5:6 (width:height) crop fills the
 art area, narrower crops are centred. The mask is a grayscale image of the
 same size: white = keep, black = background.
-Tuning via env vars: BLUR (local-contrast radius), DETAIL (0-1), GAMMA.
+Tuning via env vars: BLUR (local-contrast radius), DETAIL (0-1), GAMMA,
+ERODE (px to shrink the mask by, for photos with a bright background).
 """
 import json
 import os
@@ -28,6 +29,10 @@ def main():
 
     img = Image.open(src).convert("L")
     mask = Image.open(mask_path).convert("L")
+    # Shrink the mask so bright background at its edges doesn't skew the contrast.
+    erode = int(os.environ.get("ERODE", 0)) | 1
+    if erode > 1:
+        mask = mask.filter(ImageFilter.MinFilter(erode))
     hard_mask = mask.point(lambda v: 255 if v > 128 else 0)
 
     img = ImageOps.autocontrast(img, cutoff=1, mask=hard_mask)
