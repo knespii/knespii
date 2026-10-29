@@ -150,8 +150,10 @@ def render(theme, stats, today):
         f".l{k} {{fill: {mix(t['bg'], t['ink'], 0.12 + 0.88 * (k if theme == 'dark' else 9 - k) / 9)};}}"
         for k in range(10)
     )
+    art_width = len(art[theme][0]) * 400 / 96  # 96 columns fill the 400px art area
+    art_x = 15 + (400 - art_width) / 2
     art_svg = "\n".join(
-        f'<tspan x="15" y="{24 + i * 8}" textLength="400" lengthAdjust="spacingAndGlyphs">'
+        f'<tspan x="{art_x:g}" y="{24 + i * 8}" textLength="{art_width:g}" lengthAdjust="spacingAndGlyphs">'
         f'{art_row(glyphs, levels)}</tspan>'
         for i, (glyphs, levels) in enumerate(zip(art[theme], art["level"]))
     )

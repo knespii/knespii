@@ -2,8 +2,9 @@
 
 usage: python make_art.py photo.jpg mask.png [out.json]
 
-The photo should already be cropped to roughly 5:6 (width:height). The mask is
-a grayscale image of the same size: white = keep, black = background.
+The photo should be cropped to the person; a 5:6 (width:height) crop fills the
+art area, narrower crops are centred. The mask is a grayscale image of the
+same size: white = keep, black = background.
 Tuning via env vars: BLUR (local-contrast radius), DETAIL (0-1), GAMMA.
 """
 import json
@@ -12,7 +13,8 @@ import sys
 
 from PIL import Image, ImageChops, ImageFilter, ImageOps
 
-COLS, ROWS = 96, 60
+ROWS = 60
+CELL_ASPECT = (400 / 96) / 8  # glyph cell width / line height in the SVG
 RAMP = " .'`^\",:;Il!i><~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 MIN_GLYPH = 20  # skip the faintest glyphs so every cell carries some ink
 
@@ -34,8 +36,9 @@ def main():
     img = ImageOps.autocontrast(img, cutoff=1, mask=hard_mask)
     img = img.filter(ImageFilter.UnsharpMask(radius=3, percent=120, threshold=2))
 
-    img = img.resize((COLS, ROWS), Image.LANCZOS)
-    mask = mask.resize((COLS, ROWS), Image.LANCZOS)
+    cols = min(96, round(ROWS * img.width / img.height / CELL_ASPECT))
+    img = img.resize((cols, ROWS), Image.LANCZOS)
+    mask = mask.resize((cols, ROWS), Image.LANCZOS)
 
     def glyph(v):
         return RAMP[min(len(RAMP) - 1, MIN_GLYPH + int(v * (len(RAMP) - MIN_GLYPH - 1)))]
@@ -43,7 +46,7 @@ def main():
     art = {"dark": [], "light": [], "level": []}
     for y in range(ROWS):
         dark = light = level = ""
-        for x in range(COLS):
+        for x in range(cols):
             if mask.getpixel((x, y)) < 110:
                 dark += " "; light += " "; level += "0"
                 continue
