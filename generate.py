@@ -150,11 +150,14 @@ def render(theme, stats, today):
         f".l{k} {{fill: {mix(t['bg'], t['ink'], 0.12 + 0.88 * (k if theme == 'dark' else 9 - k) / 9)};}}"
         for k in range(10)
     )
-    art_width = len(art[theme][0]) * 400 / 96  # 96 columns fill the 400px art area
+    grid_cols, grid_rows = art.get("grid", [96, 60])  # the full grid fills the 400x480 art area
+    line = 480 / grid_rows
+    art_width = len(art[theme][0]) * 400 / grid_cols
     art_x = 15 + (400 - art_width) / 2
-    art_y = 24 + (60 - len(art[theme])) * 4  # 60 rows fill the art area
+    art_y = 16 + line + (grid_rows - len(art[theme])) * line / 2
+    font_size = 7 * line / 8
     art_svg = "\n".join(
-        f'<tspan x="{art_x:g}" y="{art_y + i * 8}" textLength="{art_width:g}" lengthAdjust="spacingAndGlyphs">'
+        f'<tspan x="{art_x:g}" y="{art_y + i * line:g}" textLength="{art_width:g}" lengthAdjust="spacingAndGlyphs">'
         f'{art_row(glyphs, levels)}</tspan>'
         for i, (glyphs, levels) in enumerate(zip(art[theme], art["level"]))
     )
@@ -175,7 +178,7 @@ size-adjust: 109%;
 .key {{fill: {t["key"]};}}
 .value {{fill: {t["value"]};}}
 .cc {{fill: {t["cc"]};}}
-.ascii {{font-size: 7px;}}
+.ascii {{font-size: {font_size:g}px;}}
 {levels_css}
 text, tspan {{white-space: pre;}}
 </style>

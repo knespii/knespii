@@ -6,7 +6,7 @@ The photo should be cropped to the person; a 5:6 (width:height) crop fills the
 art area, narrower or wider crops are centred. The mask is a grayscale image
 of the same size: white = keep, black = background.
 Tuning via env vars: BLUR (local-contrast radius), DETAIL (0-1), GAMMA,
-CONTRAST (1 = unchanged), ERODE (px to shrink the mask by, for photos with a
+CONTRAST (1 = unchanged), GRID (e.g. 120x75 for finer detail), ERODE (px to shrink the mask by, for photos with a
 bright background).
 """
 import json
@@ -15,8 +15,9 @@ import sys
 
 from PIL import Image, ImageChops, ImageFilter, ImageOps
 
-MAX_COLS, MAX_ROWS = 96, 60
-CELL_ASPECT = (400 / 96) / 8  # glyph cell width / line height in the SVG
+# Grid that fills the 400x480 art area; keep the 8:5 ratio so cells stay the same shape.
+MAX_COLS, MAX_ROWS = (int(v) for v in os.environ.get("GRID", "96x60").split("x"))
+CELL_ASPECT = (400 / MAX_COLS) / (480 / MAX_ROWS)  # glyph cell width / line height in the SVG
 RAMP = " .'`^\",:;Il!i><~+_-?][}{1)(|/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 MIN_GLYPH = 20  # skip the faintest glyphs so every cell carries some ink
 
@@ -53,7 +54,7 @@ def main():
     def glyph(v):
         return RAMP[min(len(RAMP) - 1, MIN_GLYPH + int(v * (len(RAMP) - MIN_GLYPH - 1)))]
 
-    art = {"dark": [], "light": [], "level": []}
+    art = {"grid": [MAX_COLS, MAX_ROWS], "dark": [], "light": [], "level": []}
     for y in range(rows):
         dark = light = level = ""
         for x in range(cols):
