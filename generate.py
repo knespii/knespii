@@ -44,7 +44,7 @@ INFO = [
     ("blank",),
     ("row", ["Interests", "Tech"], "Linux, IoT, Raspberry Pi, E-ink"),
     ("row", ["Interests", "Software"], "GNOME extensions, AI tools"),
-    ("row", ["Interests", "Making"], "3D Printing, Electronics"),
+    ("row", ["Interests", "Making"], "3D Printing, Handwired Keyboards"),
     ("empty",),
     ("header", "- Contact"),
     ("row", ["LinkedIn"], "viktor-knespl"),
