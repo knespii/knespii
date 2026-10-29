@@ -152,8 +152,9 @@ def render(theme, stats, today):
     )
     art_width = len(art[theme][0]) * 400 / 96  # 96 columns fill the 400px art area
     art_x = 15 + (400 - art_width) / 2
+    art_y = 24 + (60 - len(art[theme])) * 4  # 60 rows fill the art area
     art_svg = "\n".join(
-        f'<tspan x="{art_x:g}" y="{24 + i * 8}" textLength="{art_width:g}" lengthAdjust="spacingAndGlyphs">'
+        f'<tspan x="{art_x:g}" y="{art_y + i * 8}" textLength="{art_width:g}" lengthAdjust="spacingAndGlyphs">'
         f'{art_row(glyphs, levels)}</tspan>'
         for i, (glyphs, levels) in enumerate(zip(art[theme], art["level"]))
     )
